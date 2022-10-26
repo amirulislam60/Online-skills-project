@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700;900&family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    font-family: 'Poppins';
+}
+
+.service-provide.container {
+    padding: 120px 0px;
+    text-align: center;
+}
+
+.service-provide h1 {
+    font-family: montserrat;
+    font-weight: normal;
+    text-align: center;
+    color: #444;
+}
+
+.service-provide table {
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    border-spacing: 0;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.service-provide table td {
+    padding: 5px 15px;
+    font-size: 11px;
+    font-family: montserrat;
+    font-weight: 1000;
+    color: #5e5e5e;
+}
+
+.service-provide table td:hover {
+    background: #dfdfd0;
+    color: black;
+}
+
+.service-provide ul {
+    margin: 50px 0px;
+}
+
+.service-provide li {
+    width: 33.02%;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 35px;
+}
+
+.service-provide i {
+    font-size: 45px;
+    color: orange;
+}
+
+.service-provide h5 {
+    margin: 15px 0px;
+    font-family: montserrat;
+    font-size: 16px;
+    color: #444;
+    font-weight: 1;
+}
+
+.service-provide p {
+    font-weight: 1;
+    font-size: 16px;
+    line-height: 18px;
+    font-family: montserrat;
+    color: #666565;
+}
+
+.service-provide button {
+    padding: 6px 25px;
+    border: 2px solid orange;
+    border-radius: 20px;
+    font-family: montserrat;
+    color: #4a4949;
+    font-size: 11px;
+}
