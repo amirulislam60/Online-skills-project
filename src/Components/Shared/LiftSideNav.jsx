@@ -14,10 +14,10 @@ const LiftSideNav = () => {
     },[])
     return (
         <div>
-            <h2>All Courses</h2>
+            <h4>All Courses</h4>
             {
                 category.map(category => <p key={category.id}>
-                    <Link to={`/category/${category.id}`}>{category.name}</Link>
+                    <Link to={`/details/${category.id}`}>{category.name}</Link>
 
                 </p>)
             }

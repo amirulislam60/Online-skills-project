@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Components/Blog/Blog";
-import Category from "../Components/Category/Category";
 import Courses from "../Components/Courses/Courses";
 import Home from "../Home/Home";
 import Main from "../Layout/Main";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
+import Details from "../Components/DataisPage/Details";
+import RigthSide from "../Components/Shared/RigthSide";
 
 export const routes = createBrowserRouter([
     {
@@ -16,31 +17,39 @@ export const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>
             },
+            
             {
-                path:'/category/:id',
-                element:<Category></Category>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
-
-            },
-            {
-                path:'/courses',
-                element:<Courses></Courses>,
+                path: '/courses',
+                element: <Courses></Courses>,
                 loader: () => fetch(`http://localhost:5000/courses`)
             },
 
             {
-                path:'/blog',
-                element:<Blog></Blog>,
+                path: '/blog',
+                element: <Blog></Blog>,
             },
             {
-                path:'/login',
-                element:<Login></Login>,
+                path: '/login',
+                element: <Login></Login>,
             },
             {
-                path:'/register',
-                element:<Register></Register>
+                path: '/register',
+                element: <Register></Register>,
+            },
+            {
+                path: '/details/:id',
+                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`),
+                element: <Details></Details>
+            },
+
+            {
+
+                path:'/rightside',
+                loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`),
+                element:<RigthSide></RigthSide>
             }
-            
+
+
         ]
     }
 
