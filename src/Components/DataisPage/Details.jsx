@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { FaStar } from 'react-icons/fa';
 
 
 const Details = () => {
@@ -22,7 +23,12 @@ const Details = () => {
                 </Card.Text>
                 
             </Card.Body>
-            <Card.Footer className="text-muted">2 days ago</Card.Footer>
+            <Card.Footer className="text-muted">
+              <div>
+                <FaStar className='text-warning'></FaStar>
+              </div>
+              
+              </Card.Footer>
         </Card>
     );
 };
