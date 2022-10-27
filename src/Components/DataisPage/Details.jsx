@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { FaStar } from 'react-icons/fa';
+import { FaJoint, FaStar } from 'react-icons/fa';
 
 
 const Details = () => {
     const data = useLoaderData();
-    const { id, taitle, img, detail,rating}=data;
+    const { id, taitle, img, detail,rating,student}=data;
     console.log(data);
     return (
         <Card className='mb-5'>
@@ -23,11 +22,15 @@ const Details = () => {
                 </Card.Text>
                 
             </Card.Body>
-            <Card.Footer className="text-muted">
+            <Card.Footer className="d-flex justify-content-between">
               <div>
                 <FaStar className='text-warning'></FaStar>
+                    <span>{rating?.number}</span>
               </div>
-              
+              <div>
+                    <FaJoint></FaJoint>
+                    <span>{student?.number}</span>
+              </div>
               </Card.Footer>
         </Card>
     );

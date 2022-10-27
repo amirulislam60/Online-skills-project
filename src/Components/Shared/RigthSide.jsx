@@ -1,13 +1,33 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Contexts/AuthProvider';
 const RigthSide = (props) => {
     const data = props.data
 
     console.log(data)
     const [courses, setCourses] = useState([]);
+
+
+
+    const { ProviderLogin } = useContext(AuthContext);
+
+    const googleprovider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        ProviderLogin(googleprovider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
+
 
     useEffect(() => {
         fetch('http://localhost:5000/courses-category')
@@ -27,7 +47,7 @@ const RigthSide = (props) => {
                                 {item.detail.slice(0, 80) + '....'}
                             </Card.Text>
                             <Link to={`/details/${item.id}`}>
-                                <button> see details</button>
+                                <button onClick={handleGoogleSignIn}> see details</button>
                             </Link>
                         </Card.Body>
                     </Card>
