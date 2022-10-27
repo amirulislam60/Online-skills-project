@@ -6,18 +6,21 @@ const Blog = () => {
         <div>
             <div className="wrapper">
                 <div className="item">
-                    <h3>What is the purpose of react router?</h3>
-                    <p>ReactJS Router is mainly used for developing Single Page Web Applications. React Router is used to define multiple routes in the application. When a user types a specific URL into the browser, and if this URL path matches any 'route' inside the router file, the user will be redirected to that particular route.</p>
+                    <h3>what is cors?</h3>
+                    <p>Cross-origin resource sharing (CORS) is a browser security feature that restricts cross-origin HTTP requests that are initiated from scripts running in the browser. If your REST API's resources receive non-simple cross-origin HTTP requests, you need to enable CORS support.</p>
                 </div>
                 <div className="item">
-                    <h3>How does Context API works?</h3>
-                    <p>The React Context API is a way for a React app to effectively produce global variables that can be passed around. This is the alternative to "prop drilling" or moving props from grandparent to child to parent, and so on. Context is also touted as an easier, lighter approach to state management using Redux.
-
-                        React.createContext() is all you need. It returns a consumer and a provider. Provider is a component that as it's names suggests provides the state to its children. It will hold the "store" and be the parent of all the components that might need that store. Consumer as it so happens is a component that consumes and uses the state.</p>
+                    <h3>Why are you using firebase? What other options do you have to implement authentication?</h3>
+                    <p>You can use Firebase Authentication to allow users to sign in to your app using one or more sign-in methods, including email address and password sign-in, and federated identity providers such as Google Sign-in and Facebook Login. This tutorial gets you started with Firebase Authentication by showing you how to add email address and password sign-in to your app.</p>
                 </div>
                 <div className="item">
-                    <h3>What is useRef hook in react?</h3>
-                    <p>The useRef Hook allows us to persist values between renders. It can be used to store a mutable value that does not cause a re-render when updated. It can be used to access a DOM element directly.
+                    <h3> How does the private route work?</h3>
+                    <p>The private route component is similar to the public route, the only change is that redirect URL and authenticate condition.If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated (Logged in).
+                    </p>
+                </div>
+                <div className="item">
+                    <h3>What is Node? How does Node work?</h3>
+                    <p>It is a used as backend service where javascript works on the server-side of the application.This way javascript is used on both frontend and backend.Node.js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive..
                     </p>
                 </div>
             </div>
