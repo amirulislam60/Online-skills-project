@@ -78,3 +78,37 @@
     color: #4a4949;
     font-size: 11px;
 }
+
+
+
+
+@media only screen and (max-width: 780px) {
+    .service-provide ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .service-provide li {
+            width: auto;
+        }
+        .ct-content ol {
+            display: flex;
+            flex-direction: column;
+        }
+    .hc-left {
+        width: 100% !important;
+    }
+        .hc-right {
+            display: none;
+        }
+        .ct-head {
+            width: auto !important;
+        }
+
+}
+
+
+
+
+

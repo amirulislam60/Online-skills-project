@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-
+import './fag.css'
 
 const Faq = () => {
     return (

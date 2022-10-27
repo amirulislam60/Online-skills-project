@@ -35,6 +35,7 @@ const Header = () => {
                             <Link to='/'>Home</Link>
                             <Link to='/blog'>Blog</Link>
                             <Link to='/courses'>Courses</Link>
+                            <Link to='/faq'>FAQ</Link>
                             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             </NavDropdown>
                         </Nav>
@@ -43,6 +44,7 @@ const Header = () => {
                                 {
                                     user?.uid ?
                                         <>
+                                        
                                             <span>{user?.displayName}</span>
                                             <Button variant="light" onClick={handleLogOut}>Log out</Button>
                                         </>
