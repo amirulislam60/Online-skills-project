@@ -26,17 +26,19 @@ const Home = () => {
                     <li>
                         < FaBattleNet />
                         <h5>UX/UI DESIGN</h5>
-                        <p>Lorium ipsum is one of the greatest Website ever. There are lot of peple go the website to find out what is they need. Sometime i go there and copy their text</p>
+                        <p>UI refers to the screens, buttons, toggles, icons, and other visual elements that you interact with when using a website, app, or other electronic device. UX refers to the entire interaction you have with a product, including how you feel about the interaction.</p>
                     </li>
                     <li>
                         <FaWeebly></FaWeebly>
                         <h5>WEB DESIGN</h5>
-                        <p>Lorium ipsum is one of the greatest Website ever. There are lot of peple go the website to find out what is they need. Sometime i go there and copy their text</p>
+                        <p>Go from no-code to an in-demand junior web developer, at a fraction of the cost of a bootcamp. Start with the front-end by learning HTML, CSS, and JavaScript. Then, master the back-end and APIs to round out your full-stack skills.</p>
                     </li>
                     <li>
                         <FaDelicious></FaDelicious>
                         <h5>GRAPHIC DESIGN</h5>
-                        <p>Lorium ipsum is one of the greatest Website ever. There are lot of peple go the website to find out what is they need. Sometime i go there and copy their text</p>
+                        <p>This course teaches you the art of graphic design from the ground up and suits novices
+                             and those looking to polish their creative skills. We explore the history of 
+                             graphic design and examine its theory, .</p>
                     </li>
                 </ul>
                 <button>VIEW MORE </button>

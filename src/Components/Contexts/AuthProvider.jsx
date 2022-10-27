@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword,
+     signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../../Firebase/Firebase';
 
 
@@ -9,11 +10,11 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+const googelProvider= new GoogleAuthProvider
 
-
-    const ProviderLogin = (Provider) => {
+    const ProviderLogin = () => {
         setLoading(true);
-        return signInWithPopup(auth, Provider);
+        return signInWithPopup(auth, googelProvider);
     }
 
     const createUser = (email, password) => {
@@ -31,21 +32,17 @@ const AuthProvider = ({ children }) => {
         return updateProfile(auth.currentUser, profile)
     }
 
-    const verifyEmail = () => {
-        return sendEmailVerification(auth.currentUser);
-    }
+   
+    
 
     const logOut = () => {
-        setLoading(true);
         return signOut(auth);
     }
 
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser === null || currentUser.emailVerified) {
-                setUser(currentUser);
-            }
+                setUser(currentUser)
             setLoading(false);
         });
 
@@ -54,7 +51,7 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    const authInfo = { user, loading, ProviderLogin, logOut, createUser, signIn, updateUserProfile, verifyEmail, setLoading };
+    const authInfo = { user, loading, ProviderLogin, logOut, createUser, signIn, updateUserProfile,  setLoading };
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

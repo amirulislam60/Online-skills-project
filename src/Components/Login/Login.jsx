@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ const Login = () => {
 
     const [error, setError] = useState('');
 
-    const { signIn, setLoading } = useContext(AuthContext);
+    const { signIn, setLoading, user } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -27,13 +27,7 @@ const Login = () => {
                 console.log(user)
                 form.reset();
                 setError('');
-                if (user.emailVerified) {
-                    navigate(from, { replace: true });
-                }
-
-                else {
-                    console.log('your email is not verifiled plesse .')
-                }
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error)
@@ -45,6 +39,13 @@ const Login = () => {
             })
 
     }
+
+    useEffect(() => {
+        if (user?.uid) {
+            navigate(from, { replace: true })
+        }
+    }, [user, from, navigate])
+
     return (
         <Form onSubmit={handelLogin}>
             <Form.Group className="mb-3" controlId="formBasicEmail">

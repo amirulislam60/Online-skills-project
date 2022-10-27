@@ -8,7 +8,7 @@ import './Register.css'
 const Register = () => {
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
-    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -26,7 +26,6 @@ const Register = () => {
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
-                handleverifyEmail();
                 console.log('please verify your email address before login.')
             })
 
@@ -46,13 +45,7 @@ const Register = () => {
             .catch(error => console.error(error));
     }
 
-    const handleverifyEmail = () => {
-        verifyEmail()
-            .then(() => { })
-            .catch(error => console.error(error));
-
-    }
-
+   
 
     const handleAccepted = event => {
         setAccepted(event.target.checked)

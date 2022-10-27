@@ -28,7 +28,7 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Link className='logo'><img src={logo} alt="" /></Link>
-                    <Navbar.Brand href="#home">Online Courses</Navbar.Brand>
+                    <Navbar.Brand href="#home">Online</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
