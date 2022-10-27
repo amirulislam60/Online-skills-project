@@ -3,9 +3,6 @@ import headerimg from '../../img/Photo-header1.png'
 import './Hero.css'
 
 
-
-
-
 const Hero = () => {
     return (
         <div>
