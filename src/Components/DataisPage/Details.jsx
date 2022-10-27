@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import { FaJoint, FaStar } from 'react-icons/fa';
-
+import {  FaStar } from 'react-icons/fa';
+import { BsFillPeopleFill } from "react-icons/bs";
+import './Details.css'
 
 const Details = () => {
     const data = useLoaderData();
     const { id, taitle, img, detail,rating,student}=data;
     console.log(data);
     return (
-        <Card className='mb-5'>
+        <div className='details-card'>
             <Card.Body>
                 <Card.Title>{taitle}</Card.Title>
                 <Card.Img variant="top" src={img} />
@@ -28,11 +29,11 @@ const Details = () => {
                     <span>{rating?.number}</span>
               </div>
               <div>
-                    <FaJoint></FaJoint>
-                    <span>{student?.number}</span>
+                    <BsFillPeopleFill></BsFillPeopleFill>
+                    <span>{student? student : ''}</span>
               </div>
               </Card.Footer>
-        </Card>
+        </div>
     );
 };
 

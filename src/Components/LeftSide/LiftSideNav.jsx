@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import './LiftSideNav.css'
+
 const LiftSideNav = () => {
 
     const [category,setcategory] = useState([]);

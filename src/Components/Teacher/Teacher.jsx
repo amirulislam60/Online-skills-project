@@ -1,5 +1,8 @@
 import React from 'react';
-import imgPic from '../../img/Photo-header1.png'
+import png1 from '../../img/1.png'
+import png2 from '../../img/2.png'
+import png3 from '../../img/4.png'
+import png4 from '../../img/vaiya.png'
 import './Teacher.css'
 
 
@@ -17,17 +20,17 @@ const Teacher = () => {
                     <ol>
                         <li>
                             <div>
-                                <img src={imgPic} alt="" />
+                                <img src={png1} alt="" />
                             </div>
                         </li>
                         <li>
-                            <div><img src={imgPic} alt="" /></div>
+                            <div><img src={png2} alt="" /></div>
                         </li>
                         <li>
-                            <div><img src={imgPic} alt="" /></div>
+                            <div><img src={png3} alt="" /></div>
                         </li>
                         <li>
-                            <div ><img src={imgPic} alt="" /></div>
+                            <div ><img src={png4} alt="" /></div>
                         </li>
                     </ol>
                 </div>

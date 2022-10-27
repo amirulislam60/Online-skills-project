@@ -1,0 +1,23 @@
+.d-none.d-lg-block.col-lg-4 {
+    margin: 4.5rem 0;
+    background: #ddd;
+    padding: 1rem;
+    border-radius: 7px;
+}
+
+
+.d-none.d-lg-block.col-lg-4 a {
+    text-decoration: none;
+    padding: 11px 1rem;
+    background: #45adff;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 0 3rem;
+}
+.d-none.d-lg-block.col-lg-4 h4 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+

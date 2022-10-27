@@ -8,8 +8,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
+import logo from '../../img/logo.jpg'
 
-import LiftSideNav from '../Shared/LiftSideNav';
+import LiftSideNav from '../LeftSide/LiftSideNav';
 import './Header.css'
 
  
@@ -26,6 +27,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
+                    <Link className='logo'><img src={logo} alt="" /></Link>
                     <Navbar.Brand href="#home">Online Courses</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
-import LiftSideNav from '../Shared/LiftSideNav';
+import LiftSideNav from '../LeftSide/LiftSideNav';
+
 import RigthSide from '../Shared/RigthSide';
 import './Courses.css'
 const Courses = () => {
