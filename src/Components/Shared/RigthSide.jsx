@@ -1,10 +1,19 @@
-
+import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 const RigthSide = (props) => {
     const data = props.data
+
+    console.log(data)
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/courses-category')
+            .then(res => res.json())
+            .then(data => setCourses(data));
+    }, [])
 
     return (
         <Row xs={1} md={2} className="g-4">
@@ -15,7 +24,7 @@ const RigthSide = (props) => {
                         <Card.Body>
                             <Card.Title>{item.title}</Card.Title>
                             <Card.Text>
-                                {item.detail.substr(0, 80) + '....'}
+                                {item.detail.slice(0, 80) + '....'}
                             </Card.Text>
                             <Link to={`/details/${item.id}`}>
                                 <button> see details</button>

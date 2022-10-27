@@ -6,7 +6,6 @@ import Main from "../Layout/Main";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import Details from "../Components/DataisPage/Details";
-import RigthSide from "../Components/Shared/RigthSide";
 
 export const routes = createBrowserRouter([
     {
@@ -17,7 +16,7 @@ export const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>
             },
-            
+
             {
                 path: '/courses',
                 element: <Courses></Courses>,
@@ -38,17 +37,9 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`),
-                element: <Details></Details>
-            },
-
-            {
-
-                path:'/rightside',
                 loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`),
-                element:<RigthSide></RigthSide>
+                element: <Details></Details>
             }
-
 
         ]
     }
