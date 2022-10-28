@@ -13,7 +13,7 @@ import logo from '../../img/logo.jpg'
 import LiftSideNav from '../LeftSide/LiftSideNav';
 import './Header.css'
 
- 
+
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -28,7 +28,7 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Link className='logo'><img src={logo} alt="" /></Link>
-                    <Navbar.Brand href="#home">Online</Navbar.Brand>
+                    <Navbar.Brand to="/">Online</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -36,6 +36,8 @@ const Header = () => {
                             <Link to='/blog'>Blog</Link>
                             <Link to='/courses'>Courses</Link>
                             <Link to='/faq'>FAQ</Link>
+                            <input type="checkbox" id="toggle" class="toggle-item" />
+                            <label htmlFor="toggle"></label>
                             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             </NavDropdown>
                         </Nav>
@@ -44,7 +46,7 @@ const Header = () => {
                                 {
                                     user?.uid ?
                                         <>
-                                        
+
                                             <span>{user?.displayName}</span>
                                             <Button variant="light" onClick={handleLogOut}>Log out</Button>
                                         </>

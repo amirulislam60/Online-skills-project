@@ -9,7 +9,7 @@ const Login = () => {
 
     const [error, setError] = useState('');
 
-    const { signIn, setLoading, user } = useContext(AuthContext);
+    const { signIn, setLoading, user, googleLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -39,12 +39,16 @@ const Login = () => {
             })
 
     }
-
-    useEffect(() => {
-        if (user?.uid) {
-            navigate(from, { replace: true })
-        }
-    }, [user, from, navigate])
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                navigate(from, { replace: true });
+            })
+            .catch((error) => {
+                const err = error.message;
+                setError(err)
+            })
+    }
 
     return (
         <Form onSubmit={handelLogin}>
@@ -62,6 +66,7 @@ const Login = () => {
             <Button variant="primary" type="submit">
                 Login
             </Button>
+            <button onClick={handleGoogleLogin}> Login With Google</button>
             <Form.Text className='text-danger'>
                 {error}
             </Form.Text>

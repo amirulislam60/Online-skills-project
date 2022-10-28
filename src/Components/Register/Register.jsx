@@ -1,14 +1,19 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../Contexts/AuthProvider'; 
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Contexts/AuthProvider';
 import './Register.css'
 
 const Register = () => {
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
-    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const { createUser, updateUserProfile, googleLogin } = useContext(AuthContext)
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -26,6 +31,7 @@ const Register = () => {
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
+                navigate(from, { replace: true });
                 console.log('please verify your email address before login.')
             })
 
@@ -45,13 +51,20 @@ const Register = () => {
             .catch(error => console.error(error));
     }
 
-   
+
 
     const handleAccepted = event => {
         setAccepted(event.target.checked)
     }
-
-
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(() => {
+                navigate(from, { replace: true });
+            })
+            .catch((error) => {
+                const err = error.message;
+            })
+    }
     return (
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -82,6 +95,7 @@ const Register = () => {
             <Form.Text className='text-danger'>
                 {error}
             </Form.Text>
+            <button onClick={handleGoogleLogin}>Login With Google</button>
         </Form>
     );
 };

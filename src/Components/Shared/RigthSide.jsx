@@ -16,16 +16,6 @@ const RigthSide = (props) => {
 
     const { ProviderLogin } = useContext(AuthContext);
 
-    const googleprovider = new GoogleAuthProvider();
-
-    const handleGoogleSignIn = () => {
-        ProviderLogin(googleprovider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch(error => console.error(error))
-    }
 
 
 
@@ -47,7 +37,7 @@ const RigthSide = (props) => {
                                 {item.detail.slice(0, 80) + '....'}
                             </Card.Text>
                             <Link to={`/details/${item.id}`}>
-                                <button onClick={handleGoogleSignIn}> see details</button>
+                                <button> see details</button>
                             </Link>
                         </Card.Body>
                     </Card>
